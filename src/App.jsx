@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const colors = ["white", "#3572B5", "#F60002", "#908B88"]; // blanco, azul, rojo, negro
-const iconos = [null, "https://ragepay.github.io/batallaNaval/wave.png", "https://ragepay.github.io/batallaNaval/torpedo.png", "https://ragepay.github.io/batallaNaval/bomba.png"]; // íconos según color.
+const iconos = [null, "https://ragepay.github.io/batallaNaval/wave.png", "https://ragepay.github.io/batallaNaval/torpedo.png", "https://ragepay.github.io/batallaNaval/bomba.png"];
 
 const Cell = ({ resetSignal }) => {
   const [clicks, setClicks] = useState(0);
@@ -17,7 +17,7 @@ const Cell = ({ resetSignal }) => {
   return (
     <div
       onClick={handleClick}
-      className="w-10 h-10 border border-gray-600 cursor-pointer rounded-md transition-all duration-300 shadow hover:scale-105 active:scale-95 flex items-center justify-center"
+      className="w-12 h-12 border border-gray-600 cursor-pointer rounded-md transition-all duration-300 shadow hover:scale-105 active:scale-95 flex items-center justify-center"
       style={{
         backgroundColor: colors[clicks],
       }}
@@ -31,7 +31,7 @@ const Cell = ({ resetSignal }) => {
 
 const TeamGrid = ({ teamName, resetSignal }) => {
   return (
-    <div className="flex flex-col items-center p-8 bg-white rounded-lg shadow-md border border-gray-300">
+    <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-300">
       <div className="font-bold mb-3 text-lg text-gray-700">{teamName}</div>
       <div className="grid grid-cols-6 gap-1">
         {Array.from({ length: 36 }).map((_, i) => (
@@ -48,7 +48,7 @@ const ScoreTable = ({ scores, setScores }) => {
   };
 
   return (
-    <div className="w-full max-w-5xl mb-8 overflow-x-auto rounded-xl shadow-lg bg-white border border-gray-300">
+    <div className="w-full max-w-full md:max-w-5xl mb-8 overflow-x-auto rounded-xl shadow-lg bg-white border border-gray-300">
       <table className="w-full text-center table-auto">
         <thead className="bg-blue-100 text-gray-700 text-lg">
           <tr>
@@ -115,7 +115,7 @@ export default function App() {
   };
 
   return (
-    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300 p-6">
+    <div className="min-h-screen flex flex-col items-center justify-center bg-gradient-to-br from-blue-100 to-blue-300 p-4">
       <ScoreTable scores={scores} setScores={setScores} />
 
       <button
@@ -125,7 +125,7 @@ export default function App() {
         Reiniciar Todo
       </button>
 
-      <div className="grid grid-cols-2 grid-rows-2 gap-6">
+      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <TeamGrid teamName="PAC-MAN" resetSignal={resetSignal} />
         <TeamGrid teamName="TETRIS" resetSignal={resetSignal} />
         <TeamGrid teamName="PINBALL" resetSignal={resetSignal} />
