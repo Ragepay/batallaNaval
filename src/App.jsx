@@ -1,7 +1,7 @@
 import { useState, useEffect } from "react";
 
 const colors = ["white", "#3572B5", "#F60002", "#908B88"]; // blanco, azul, rojo, negro
-const iconos = [null, "public/wave.png", "/public/torpedo.png", "/public/bomba.png"]; // íconos según color
+const iconos = [null, "https://ragepay.github.io/batallaNaval/wave.png", "https://ragepay.github.io/batallaNaval/torpedo.png", "https://ragepay.github.io/batallaNaval/bomba.png"]; // íconos según color.
 
 const Cell = ({ resetSignal }) => {
   const [clicks, setClicks] = useState(0);
