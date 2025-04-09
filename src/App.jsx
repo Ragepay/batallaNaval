@@ -95,8 +95,8 @@ export default function App() {
   const [scores, setScores] = useState({
     "PAC-MAN": 0,
     "TETRIS": 0,
-    "PINBALL": 0,
     "DAYTONA": 0,
+    "PINBALL": 0,
   });
 
   const [resetSignal, setResetSignal] = useState(0);
@@ -107,8 +107,8 @@ export default function App() {
       setScores({
         "PAC-MAN": 0,
         "TETRIS": 0,
-        "PINBALL": 0,
         "DAYTONA": 0,
+        "PINBALL": 0,
       });
       setResetSignal((prev) => prev + 1);
     }
@@ -128,8 +128,8 @@ export default function App() {
       <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
         <TeamGrid teamName="PAC-MAN" resetSignal={resetSignal} />
         <TeamGrid teamName="TETRIS" resetSignal={resetSignal} />
-        <TeamGrid teamName="PINBALL" resetSignal={resetSignal} />
         <TeamGrid teamName="DAYTONA" resetSignal={resetSignal} />
+        <TeamGrid teamName="PINBALL" resetSignal={resetSignal} />
       </div>
     </div>
   );
