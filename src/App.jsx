@@ -33,8 +33,8 @@ const TeamGrid = ({ teamName, resetSignal }) => {
   return (
     <div className="flex flex-col items-center p-6 bg-white rounded-lg shadow-md border border-gray-300">
       <div className="font-bold mb-3 text-lg text-gray-700">{teamName}</div>
-      <div className="grid grid-cols-6 gap-1">
-        {Array.from({ length: 36 }).map((_, i) => (
+      <div className="grid grid-cols-5 gap-1">
+        {Array.from({ length: 25 }).map((_, i) => (
           <Cell key={i} resetSignal={resetSignal} />
         ))}
       </div>
